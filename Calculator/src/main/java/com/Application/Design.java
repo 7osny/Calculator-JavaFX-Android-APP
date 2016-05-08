@@ -227,7 +227,78 @@ class HandlerEqual implements EventHandler<ActionEvent>{
 }
 
 public static double Solve( String str) {
-	return (double) new Object();
+    return new Object() {
+        int pos = -1, ch;
+
+        void nextChar() {
+            ch = (++pos < str.length()) ? str.charAt(pos) : -1;
+        }
+
+        boolean Eval(int chr) {
+            while (ch == ' ') nextChar();
+            if (ch == chr) {
+                nextChar();
+                return true;
+            }
+            return false;
+        }
+
+        double parse() {
+            nextChar();
+            double x = parseExpression();
+            if (pos < str.length()) throw new RuntimeException("Unexpected: " + (char)ch);
+            return x;
+        }
+
+        double parseExpression() {
+            double x = parseTerm();
+            for (;;) {
+                if      (Eval('+')) x += parseTerm(); // addition
+                else if (Eval('-')) x -= parseTerm(); // subtraction
+                else return x;
+            }
+        }
+
+        double parseTerm() {
+            double x = parseFactor();
+            for (;;) {
+                if      (Eval('*')) x *= parseFactor(); // multiplication
+                else if (Eval('/')) x /= parseFactor(); // division
+                else if (Eval('%')) x %= parseFactor(); 
+                else return x;
+            }
+        }
+
+        double parseFactor() {
+            if (Eval('+')) return parseFactor(); // unary plus
+            if (Eval('-')) return -parseFactor(); // unary minus
+
+            double x;
+            int startPos = this.pos;
+            if (Eval('(')) { // parentheses
+                x = parseExpression();
+                Eval(')');
+            } else if ((ch >= '0' && ch <= '9') || ch == '.') { // numbers
+                while ((ch >= '0' && ch <= '9') || ch == '.') nextChar();
+                x = Double.parseDouble(str.substring(startPos, this.pos));
+            } else if (ch >= 'a' && ch <= 'z') { // functions
+                while (ch >= 'a' && ch <= 'z') nextChar();
+                String func = str.substring(startPos, this.pos);
+                x = parseFactor();
+                if (func.equals("sqrt")) x = Math.sqrt(x);
+                else if (func.equals("sin")) x = Math.sin(Math.toRadians(x));
+                else if (func.equals("cos")) x = Math.cos(Math.toRadians(x));
+                else if (func.equals("tan")) x = Math.tan(Math.toRadians(x));
+                else throw new RuntimeException("Unknown function: " + func);
+            } else {
+                throw new RuntimeException("Unexpected: " + (char)ch);
+            }
+
+            if (Eval('^')) x = Math.pow(x, parseFactor()); // exponentiation
+
+            return x;
+        }
+    }.parse();
 }
 public void handel ()
 {
