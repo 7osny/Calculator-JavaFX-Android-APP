@@ -18,6 +18,7 @@ mainClassName = 'com.Application.Main'
 jfxmobile {
     android {
         manifest = 'src/android/AndroidManifest.xml'
+        androidSdk='C:/Users/Hotline/AppData/Local/Android/android-sdk/'
     }
     ios {
         infoPList = file('src/ios/Default-Info.plist')
