@@ -214,7 +214,7 @@ class Handler implements EventHandler<ActionEvent>{
 	public void handle(ActionEvent e) {
 		Button source = (Button) e.getSource();
 		String str= source.getText();
-		txt.appendText(str);
+		txt.appendText(str+" ");
 	}
 }
 public void handel ()
@@ -263,5 +263,20 @@ public void handel ()
             txt.clear();
 		}		
      });
+
+     pow2.setOnAction(new EventHandler<ActionEvent>(){
+		@Override
+        public void handle(ActionEvent event) {
+       txt.appendText("^2 ");
+		}		
+     });;
+	
+     pow3.setOnAction(new EventHandler<ActionEvent>(){
+		@Override
+        public void handle(ActionEvent event) {
+       txt.appendText("^3 ");
+		}		
+     });;
+	
 }
 }
