@@ -13,8 +13,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) {
-        StackPane root = new StackPane(new Label("Hello JavaFX World!"));
-
+    	Design root =new Design ();
         Rectangle2D visualBounds = Screen.getPrimary().getVisualBounds();
         Scene scene = new Scene(root, visualBounds.getWidth(), visualBounds.getHeight());
 
