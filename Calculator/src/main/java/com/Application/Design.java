@@ -217,10 +217,24 @@ class Handler implements EventHandler<ActionEvent>{
 		txt.appendText(str);
 	}
 }
+class HandlerEqual implements EventHandler<ActionEvent>{
+	
+	@Override
+	public void handle(ActionEvent e) {
+		txt.setText(Solve(txt.getText())+"");
+
+	}
+}
+
+public static double Solve( String str) {
+	return (double) new Object();
+}
 public void handel ()
 {
 
   	Handler h1=new Handler();
+  	HandlerEqual h2=new HandlerEqual();
+	equal.setOnAction(h2);
 	b0.setOnAction(h1);
 	b1.setOnAction(h1);
 	b2.setOnAction(h1);	
