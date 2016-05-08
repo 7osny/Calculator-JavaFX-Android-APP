@@ -4,6 +4,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 
 public class Design extends VBox{
@@ -79,6 +81,7 @@ public class Design extends VBox{
  	 	getChildren().addAll(txt,gridButtons);
  	 	setPadding(new Insets(7.5, 7.5, 7.5, 7.5));
  	 	setSpacing(7.5);
+ 	 	handel();
 	}
 private class Grid extends GridPane {
 	//create All Buttons 
@@ -204,4 +207,40 @@ private class Grid extends GridPane {
 			add(tan,6,3);
 		}	
 	}
+
+class Handler implements EventHandler<ActionEvent>{
+	
+	@Override
+	public void handle(ActionEvent e) {
+		Button source = (Button) e.getSource();
+		String str= source.getText();
+		txt.appendText(str);
+	}
+}
+public void handel ()
+{
+
+  	Handler h1=new Handler();
+	b0.setOnAction(h1);
+	b1.setOnAction(h1);
+	b2.setOnAction(h1);	
+	b3.setOnAction(h1);
+	b4.setOnAction(h1);
+	b5.setOnAction(h1);
+	b6.setOnAction(h1);
+	b7.setOnAction(h1);
+	b8.setOnAction(h1);
+	b9.setOnAction(h1);
+	div.setOnAction(h1);
+	add.setOnAction(h1);
+	sub.setOnAction(h1);
+	multiple.setOnAction(h1);
+	left_bracket.setOnAction(h1);
+	right_bracket.setOnAction(h1);
+	dot.setOnAction(h1);
+	remainder.setOnAction(h1);
+	tan.setOnAction(h1);
+	sin.setOnAction(h1);
+	cos.setOnAction(h1);
+}
 }

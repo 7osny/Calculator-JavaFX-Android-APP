@@ -16,7 +16,6 @@ public class Main extends Application {
     	Design root =new Design ();
         Rectangle2D visualBounds = Screen.getPrimary().getVisualBounds();
         Scene scene = new Scene(root, visualBounds.getWidth(), visualBounds.getHeight());
-
         stage.getIcons().add(new Image(Main.class.getResourceAsStream("/icon.png")));
         stage.setScene(scene);
         stage.show();
