@@ -242,5 +242,26 @@ public void handel ()
 	tan.setOnAction(h1);
 	sin.setOnAction(h1);
 	cos.setOnAction(h1);
+
+	
+	del.setOnAction(new EventHandler<ActionEvent>(){
+		@Override
+        public void handle(ActionEvent event) {
+		
+
+		StringBuilder str=new StringBuilder( txt.getText());
+			str=str.deleteCharAt(str.length()-1);
+			String x=new String(str);
+            txt.setText(x);
+		}		
+     });
+	
+
+	c.setOnAction(new EventHandler<ActionEvent>(){
+		@Override
+        public void handle(ActionEvent event) {
+            txt.clear();
+		}		
+     });
 }
 }
