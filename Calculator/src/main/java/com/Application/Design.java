@@ -85,6 +85,94 @@ private class Grid extends GridPane {
 	public Grid()
 		{
 
+	    //bind buttons on gird 
+		b0.prefWidthProperty().bind(widthProperty().divide(7));
+		b0.prefHeightProperty().bind(heightProperty().divide(4));
+		 
+		b1.prefWidthProperty().bind(widthProperty().divide(7));
+		b1.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		b2.prefWidthProperty().bind(widthProperty().divide(7));
+		b2.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		b3.prefWidthProperty().bind(widthProperty().divide(7));
+		b3.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		b4.prefWidthProperty().bind(widthProperty().divide(7));
+		b4.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		b5.prefWidthProperty().bind(widthProperty().divide(7));
+		b5.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		b6.prefWidthProperty().bind(widthProperty().divide(7));
+		b6.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		b7.prefWidthProperty().bind(widthProperty().divide(7));
+		b7.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		b8.prefWidthProperty().bind(widthProperty().divide(7));
+		b8.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		b9.prefWidthProperty().bind(widthProperty().divide(7));
+		b9.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		div.prefWidthProperty().bind(widthProperty().divide(7));
+		div.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		add.prefWidthProperty().bind(widthProperty().divide(7));
+		add.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		sub.prefWidthProperty().bind(widthProperty().divide(7));
+		sub.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		multiple.prefWidthProperty().bind(widthProperty().divide(7));
+		multiple.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		left_bracket.prefWidthProperty().bind(widthProperty().divide(7));
+		left_bracket.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		right_bracket.prefWidthProperty().bind(widthProperty().divide(7));
+		right_bracket.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		dot.prefWidthProperty().bind(widthProperty().divide(7));
+		dot.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		remainder.prefWidthProperty().bind(widthProperty().divide(7));
+		remainder.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		pi.prefWidthProperty().bind(widthProperty().divide(7));
+		pi.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		
+		equal.prefWidthProperty().bind(widthProperty().divide(7));
+		equal.prefHeightProperty().bind(heightProperty().divide(4));
+
+		pow2.prefWidthProperty().bind(widthProperty().divide(7));
+		pow2.prefHeightProperty().bind(heightProperty().divide(4));
+					
+		pow3.prefWidthProperty().bind(widthProperty().divide(7));
+		pow3.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		
+		sqrt.prefWidthProperty().bind(widthProperty().divide(7));
+		sqrt.prefHeightProperty().bind(heightProperty().divide(4));
+
+		
+		del.prefWidthProperty().bind(widthProperty().divide(7));
+		del.prefHeightProperty().bind(heightProperty().divide(4));
+
+		tan.prefWidthProperty().bind(widthProperty().divide(7));
+		tan.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		sin.prefWidthProperty().bind(widthProperty().divide(7));
+		sin.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		cos.prefWidthProperty().bind(widthProperty().divide(7));
+		cos.prefHeightProperty().bind(heightProperty().divide(4));
+		
+		c.prefWidthProperty().bind(widthProperty().divide(7));
+		c.prefHeightProperty().bind(heightProperty().divide(4));
+		
 			//add All Buttons to grid 
 			add(b7,0,0);
 			add(b8,1,0);
