@@ -4,7 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-
+import javafx.geometry.Insets;
 
 public class Design extends VBox{
 	//Create Calculator Buttons
@@ -70,9 +70,15 @@ public class Design extends VBox{
 
  	public Design()
 	{
-	Grid gridButtons=new Grid();
- 	getChildren().addAll(txt,gridButtons);
- 	setSpacing(7.5);
+ 		Grid gridButtons=new Grid();
+ 	 	gridButtons.setPadding(new Insets(5, 5, 5, 5));
+ 	 	gridButtons.setHgap(7.5);
+ 	 	gridButtons.setVgap(7.5);
+ 	 	txt.setEditable(false);
+ 	 	txt.setMinSize(390, 90);
+ 	 	getChildren().addAll(txt,gridButtons);
+ 	 	setPadding(new Insets(7.5, 7.5, 7.5, 7.5));
+ 	 	setSpacing(7.5);
 	}
 private class Grid extends GridPane {
 	//create All Buttons 
